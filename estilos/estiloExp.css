@@ -1,0 +1,340 @@
+:root {
+  --Crema: #f9f3f1;
+  --Morado: #e0d1f0;
+  --Verde: #a0cfb2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--Crema);
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  line-height: 1.5;
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--Verde);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  width: 80px;
+  height: auto;
+}
+
+/* Menú hamburguesa */
+#menu-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  display: block;
+  margin-left: auto;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+#menu-btn.active .hamburger:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#menu-btn.active .hamburger:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-btn.active .hamburger:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--Verde);
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.nav-menu.active {
+  display: block;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-menu li {
+  text-align: center;
+}
+
+.nav-menu a {
+  color: #000;
+  text-decoration: none;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--Morado);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content */
+main {
+  padding: 1rem;
+  padding-top: 80px;
+}
+
+/* CARRUSEL CENTRADO (1 VIDEO A LA VEZ) */
+.videos-terapia {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+.swiper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100% !important; /* Añadir esto */
+}
+
+
+.swiper-slide {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.videos-terapia video {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 10px;
+}
+
+/* Paginación centrada */
+.swiper-pagination {
+  position: relative;
+  bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.swiper-pagination-bullet {
+  background: var(--Morado);
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--Morado);
+  opacity: 1;
+}
+
+/* Botones de navegación */
+.swiper-button-next,
+.swiper-button-prev {
+  display: flex !important;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--Morado);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Sección de texto */
+.texto-terapia article {
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+ul {
+  text-align: left;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.texto-terapia article:hover {
+  transform: translateY(-5px);
+}
+
+.texto-terapia h2 {
+  font-family: "Times New Roman", serif;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  background-color: var(--Verde);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.texto-terapia p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #222;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: var(--Morado);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p,
+.copyright p {
+  margin: 0.3rem 0;
+}
+.cta {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--Verde);
+  border-radius: 15px;
+}
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--Morado);
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Animaciones */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries */
+@media (min-width: 720px) {
+  /* Menú desktop */
+  #menu-btn {
+        display: none;
+    }
+    
+    .nav-menu {
+        display: block;
+        position: static;
+        background: transparent;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+    }
+    
+    .nav-menu ul {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .nav-menu a {
+        padding: 0.5rem;
+    }
+    
+    .nav-menu a:hover {
+        background-color: transparent;
+        color: var(--Morado);
+    }
+  /* Carrusel */
+ 
+}
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .texto-terapia {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .swiper-slide {
+    width: 100% !important;
+    max-width: 400px;
+  }
+}
+

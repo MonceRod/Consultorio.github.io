@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Citas Psicológicas</title>
+    <link rel="stylesheet" href="estilos/estiloForm.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Times+New+Roman&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img src="imgs/logo.png" alt="Logo Psicología" /></a>
+      <button id="menu-btn" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="exp.html">Experiencia</a></li>
+          <li><a href="info.html">Información</a></li>
+          <li><a href="form.html">Citas</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article class="form-container">
+        <div class="card-content" style="text-align: center">
+          <h1>Horarios de disponibilidad</h1>
+          <p>
+            Los horarios de atención tanto en modalidad presencial como en linea
+            son de lunes a viernes, de 10:00 a.m. a 1:00 p.m. y de 3:00 p.m. a
+            7:00 p.m. Es necesario revisar la disponibilidad de estos horarios.
+          </p>
+          <p>
+            <b><i><strong>Nota: Las citas están sujetas a disponibilidad.</strong></i></b>
+          </p>
+        </div>
+      </article>
+      <br />
+      <div class="form-container">
+        <h1>Solicitud de Cita</h1>
+        <form id="citaForm">
+          <div class="form-group">
+            <label for="nombre">Nombre completo:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              placeholder="Ej. María González"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              required
+              placeholder="55 1234 5678"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fecha">Fecha preferida:</label>
+              <input type="date" id="fecha" name="fecha" required />
+            </div>
+
+            <div class="form-group">
+              <label for="hora">Hora preferida:</label>
+              <select id="hora" name="hora" required>
+                <option value="">Selecciona una hora</option>
+                <option value="10:00">10:00 a.m.</option>
+                <option value="11:00">11:00 a.m.</option>
+                <option value="12:00">12:00 p.m.</option>
+                <option value="15:00">3:00 p.m.</option>
+                <option value="16:00">4:00 p.m.</option>
+                <option value="17:00">5:00 p.m.</option>
+                <option value="18:00">6:00 p.m.</option>
+                <option value="19:00">7:00 p.m.</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Mensaje adicional:</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Describe brevemente el motivo de tu consulta"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-enviar">Solicitar Cita</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="contact-info">
+          <h3>Contacto Directo</h3>
+          <p>📞 Tel: 636 114 9117</p>
+          <p>📧 Correo: mra171188@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/js.js"></script>
+  </body>
+</html>
